@@ -7,6 +7,8 @@ package Activity2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +35,10 @@ public class PageGenerator extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String name=request.getParameter("username");
+            Date time=new Date();
+            SimpleDateFormat format=new SimpleDateFormat("HH");
+            int hour=Integer.parseInt(format.format(time));
             
         }
     }
